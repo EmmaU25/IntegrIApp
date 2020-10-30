@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  userData: any;
 
-  constructor() { }
+  constructor(
+    public router: Router
+  ) 
+  { 
+    
+  }
+  
+
+    
 }
