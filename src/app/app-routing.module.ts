@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   {
     path: '',
@@ -8,20 +8,18 @@ const routes: Routes = [
   },
   {
     path: 'tabs',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule),
+    canActivate : [AuthGuard]
   },
-  
   {
     path: 'verify-mail',
-    loadChildren: () => import('./verify-mail/verify-mail.module').then( m => m.VerifyMailPageModule)
-  },
-  {
-    path: 'detail',
-    loadChildren: () => import('./detail/detail.module').then( m => m.DetailPageModule)
+    loadChildren: () => import('./verify-mail/verify-mail.module').then( m => m.VerifyMailPageModule),
+    canActivate : [AuthGuard]
   },
   {
     path: 'new-user',
-    loadChildren: () => import('./new-user/new-user.module').then( m => m.NewUserPageModule)
+    loadChildren: () => import('./new-user/new-user.module').then( m => m.NewUserPageModule),
+    canActivate : [AuthGuard]
   }
 ];
 @NgModule({

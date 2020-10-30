@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { LoginService } from '../services/login.service';
+import { User } from '../models/user';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,9 @@ export class LoginPage implements OnInit {
   }
 
   ngOnInit() {
+    this.loginService.getAllUsers().subscribe((data: User[])=>{
+      this.loginService.users = data;
+    });
   }
   
   createForm(){
@@ -37,7 +42,18 @@ export class LoginPage implements OnInit {
   }
 
   login(){
-    this.router.navigateByUrl('/tabs');
+    if(this.forma.valid){
+      if(this.loginService.login(this.forma.value["username"], this.forma.value["pwd"])){
+        this.router.navigateByUrl('/tabs');
+      }else{
+        Swal.fire({
+          icon: 'error',
+          text: 'incorrect data'
+        });
+      }
+    }
+
+    this.forma.reset();
   }
 
   register(){

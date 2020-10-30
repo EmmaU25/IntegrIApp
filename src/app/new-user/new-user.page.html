@@ -13,9 +13,9 @@
     <div>
       <ion-item>
         <ion-label position="floating">Name</ion-label>
-        <ion-input formControlName="email"  class="form-control"></ion-input>
+        <ion-input formControlName="displayName"  class="form-control"></ion-input>
       </ion-item>
-      <span *ngIf="emailInvalid()">
+      <span *ngIf="nameInvalid()">
         <ion-icon name="alert-circle"></ion-icon>
         Please enter your name
       </span>
@@ -49,6 +49,22 @@
         <ion-icon name="alert-circle"></ion-icon>
         Please enter an password
       </span>
+    </div>
+
+    <div>
+      <ion-item>
+        <ion-label>User type</ion-label>
+        <ion-select placeholder="Select One" formControlName="types" >
+          <ion-select-option value="A">Type A</ion-select-option>
+          <ion-select-option value="B">Type B</ion-select-option>
+        </ion-select>
+        
+        
+      </ion-item>
+    <span *ngIf="tyeInvalid()" >
+          <ion-icon name="alert-circle"></ion-icon>
+          Please select a type
+        </span>
     </div>
 
     <div class="ion-margin-bottom ion-margin-top">

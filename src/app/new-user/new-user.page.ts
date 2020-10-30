@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-new-user',
   templateUrl: './new-user.page.html',
@@ -32,22 +34,38 @@ export class NewUserPage implements OnInit {
     return this.form.get('password').invalid && this.form.get('password').touched;
   }
 
+  tyeInvalid(){
+    return this.form.get('types').invalid && this.form.get('types').touched;
+  }
+
   createForm(){
     this.form = this.formaBuilder.group({
       email : ['',[Validators.required, Validators.email]],
       displayName : ['',[Validators.required]],
-      password : ['',[Validators.required]]
+      password : ['',[Validators.required]],
+      types: ['',[]]
     })
   }
 
-  signUp(email, password) {
-
-    // this.login.RegisterUser(email.value, password.value)      
-    // .then((res) => {  
-    //     this.login.SendVerificationMail()
-    //     this.router.navigate(['verify-email']);
-    // }).catch((error) => {
-    //   window.alert(error.message)
-    // })
+  signUp() {
+    console.log(this.form.value);
+    if(this.form.valid){
+     
+      this.login.registerUser(this.form.value).subscribe(data =>{
+        console.log(data);
+        if(data){
+          this.router.navigateByUrl("/tabs/tab1");
+          this.login.user = true;
+          this.login.tipo = this.form.value["types"];
+        }else{
+          Swal.fire({
+            icon: 'error',
+            text: 'Register Failed, try later'
+          })
+        }
+      })
+    }else{
+      console.log("invalid form");
+    }
   }
 }

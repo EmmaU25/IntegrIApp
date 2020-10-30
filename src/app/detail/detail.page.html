@@ -1,9 +1,62 @@
 <ion-header>
   <ion-toolbar>
+    <ion-button color="light"  slot="start" class="ion-margin-start" (click)="closeModal()">
+      <ion-icon name="close-circle-outline"></ion-icon>
+    </ion-button>
     <ion-title>detail</ion-title>
+    <ion-button color="danger" *ngIf="ide!=''" slot="end" class="ion-margin-end" (click)="delete()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  
+  
+  <form [formGroup]="forma" (ngSubmit)="save()" *ngIf="flag">
+    
+    <div>
+      <ion-item class="ion-hide">
+        <ion-input formControlName="id"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-label position="floating" >Description</ion-label>
+        <ion-input formControlName="descripcion" ></ion-input>
+      </ion-item>
+      <span *ngIf="getDescripcionInvalid()">
+        <ion-icon name="alert-circle"></ion-icon>
+        Please enter a description
+      </span>
+    </div>
+    <div>
+      <ion-item>
+        <ion-label position="floating"  >Categoria</ion-label>
+        <ion-input formControlName="categoria" ></ion-input>
+      </ion-item>
+      <span *ngIf="getCategoriaInvalid()">
+        <ion-icon name="alert-circle"></ion-icon>
+        Please enter a categoria
+      </span>
+    </div>
+    <div>
+      <ion-item>
+        <ion-label position="floating">MM/DD/YYYY</ion-label>
+        <ion-datetime formControlName="fecha" pickerFormat="DD MMMM YYYY" displayFormat="DD/MM/YYYY" min="2000-01-01" max="2021-12-31" ></ion-datetime>
+      </ion-item>
+      <span *ngIf="getfechaInvalid()">
+        <ion-icon name="alert-circle"></ion-icon>
+        Please enter a date
+      </span>
+    </div>
+    <div class="ion-margin-bottom ion-margin-top">
+      <ion-button color="dark" type="submit"  class="ion-block-display ion-margin-botttom">
+        {{ide !=  '' ? 'Update' : 'Create' }}
+      </ion-button>
+    </div>
+  </form>
+
+  <div *ngIf="!flag">
+    cargando...
+  </div>
 </ion-content>

@@ -4,15 +4,8 @@
 
 export const environment = {
   production: false,
-  firebaseConfig : {
-    apiKey: "AIzaSyDZJxpmo0LYE6QA_aphqQDHn0LOAcz2dNg",
-    authDomain: "intreapp.firebaseapp.com",
-    databaseURL: "https://intreapp.firebaseio.com",
-    projectId: "intreapp",
-    storageBucket: "intreapp.appspot.com",
-    messagingSenderId: "265031720297",
-    appId: "1:265031720297:web:7aea5426f6c37cc8d6f1f8"
-  }
+  apiKeyWeather: '35426e176d94fbf319231753699abb54',
+  apiActivities: "https://activities-app-test.herokuapp.com/"
 };
 
 /*

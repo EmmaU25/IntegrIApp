@@ -17,8 +17,7 @@ import { CommonModule } from '@angular/common';
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    CommonModule
+    ReactiveFormsModule
   ],
   providers: [
     StatusBar,

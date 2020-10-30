@@ -1,0 +1,96 @@
+{
+  "activities": [
+    {
+      "id": 1604076856130,
+      "categoria": "ejercicio",
+      "descripcion": "hacer 20 sentadillas",
+      "fecha": "2020-10-30T10:54:16.142-06:00"
+    },
+    {
+      "id": 1604076873439,
+      "categoria": "salud",
+      "descripcion": "visitar al dentista",
+      "fecha": "2020-11-30T10:54:33.454-06:00"
+    },
+    {
+      "id": 1604076900604,
+      "categoria": "entretenimiento",
+      "descripcion": "Ver la casa de papel",
+      "fecha": "2020-10-30T10:55:00.615-06:00"
+    },
+    {
+      "id": 1604076923168,
+      "categoria": "familia",
+      "descripcion": "ir a comer con mis papas",
+      "fecha": "2020-10-30T10:55:23.181-06:00"
+    },
+    {
+      "id": 1604076938431,
+      "categoria": "entretenimiento",
+      "descripcion": "ver la leyenda de korra",
+      "fecha": "2020-12-30T10:55:38.442-06:00"
+    },
+    {
+      "id": 1604076959471,
+      "categoria": "familia",
+      "descripcion": "Visitar a mi abuelita",
+      "fecha": "2020-11-30T10:55:59.485-06:00"
+    },
+    {
+      "id": 1604076978270,
+      "categoria": "ejercicio",
+      "descripcion": "Hacer 20 lagartijas",
+      "fecha": "2020-10-31T10:56:18.280-06:00"
+    },
+    {
+      "id": 1604077001484,
+      "categoria": "entretenimiento",
+      "descripcion": "Partida warzone con amigos",
+      "fecha": "2020-10-30T10:56:41.525-06:00"
+    },
+    {
+      "id": 1604077055423,
+      "categoria": "familia",
+      "descripcion": "Jugar con los sobrinos",
+      "fecha": "2020-12-30T10:57:35.438-06:00"
+    },
+    {
+      "id": 1604077085333,
+      "categoria": "amigos",
+      "descripcion": "ver a pedro en la plaza",
+      "fecha": "2020-12-25T10:58:05.344-06:00"
+    },
+    {
+      "id": 1604077110734,
+      "categoria": "casa",
+      "descripcion": "Lavar los trastes",
+      "fecha": "2020-10-30T10:58:30.743-06:00"
+    },
+    {
+      "id": 1604077139397,
+      "categoria": "salud",
+      "descripcion": "recoger analisis clinicos",
+      "fecha": "2020-12-30T10:58:59.408-06:00"
+    },
+    {
+      "id": 1604077250841,
+      "categoria": "educacion",
+      "descripcion": "redactar ensayo",
+      "fecha": "2020-10-30T11:00:50.852-06:00"
+    },
+    {
+      "id": 1604077268612,
+      "categoria": "educacion",
+      "descripcion": "Leer libro pdf",
+      "fecha": "2020-10-31T11:01:08.622-06:00"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "email": "gato@gmail.com",
+      "password": "Entretenimiento",
+      "tipo": "A"
+    }
+  ]
+}

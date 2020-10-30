@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
+  <app-header title="Chart"></app-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-text-center">
+    <h3>TOP 5 ACTIVITIES</h3>
+  </div>
+  
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <div class="chart-wrapper" *ngIf="flag">
+    <canvas baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels" [chartType]="doughnutChartType">
+    </canvas>
+  </div>
+
+  <div *ngIf="!flag" class="ion-text-center">
+    <ion-spinner></ion-spinner>
+  </div>
 </ion-content>
