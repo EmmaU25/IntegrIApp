@@ -52,10 +52,11 @@ export class NewUserPage implements OnInit {
     if(this.form.valid){
      
       this.login.registerUser(this.form.value).subscribe(data =>{
-        console.log(data);
         if(data){
+          this.login.saveUserStorage();
           this.router.navigateByUrl("/tabs/tab1");
           this.login.user = true;
+          
           this.login.tipo = this.form.value["types"];
         }else{
           Swal.fire({

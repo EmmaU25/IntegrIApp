@@ -7,4 +7,3 @@ Proceso de la instalacion
 4.- Ejecuta el servidor con el comando IONIC SERVE
 5.- Este es un PWA por lo cual si lo estas visualizando en un navegador, activa la vista de telefono 
 	que incluyen los navegadores(F12) o en caso conntrario instala el apk
-
